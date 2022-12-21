@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.66.0'
+project:
+    name: Food
+    package:
+        name: Food
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Food/tests
+            options:
+                outputdir: robot/Food/results
+
+    robot_testdoc:
+        options:
+            path: robot/Food/tests
+            output: robot/Food/doc/Food_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
