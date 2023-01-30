@@ -3,6 +3,7 @@ project:
     name: Food
     package:
         name: Food
+        namespace: FoodProject
         api_version: '55.0'
     git:
         default_branch: 'main'
