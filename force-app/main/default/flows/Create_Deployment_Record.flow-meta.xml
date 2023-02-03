@@ -132,6 +132,17 @@
     <environments>Default</environments>
     <interviewLabel>Create Deployment Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Create Deployment Record</label>
+    <loops>
+        <name>LoopOverOpportunity</name>
+        <label>LoopOverOpportunity</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <collectionReference>OpportunityRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <noMoreValuesConnector>
+            <targetReference>Deployment_Form</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -151,51 +162,97 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>Account_Records</name>
+        <label>Account Records</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OpportunityRecords</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>OpportunityRecords</name>
+        <label>OpportunityRecords</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LoopOverOpportunity</targetReference>
+        </connector>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <screens>
         <name>Deployment_Form</name>
         <label>Deployment Form</label>
         <locationX>176</locationX>
-        <locationY>158</locationY>
+        <locationY>614</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>Application_Name</name>
-            <choiceReferences>A</choiceReferences>
-            <choiceReferences>B</choiceReferences>
-            <choiceReferences>C</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Application Name</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>false</isRequired>
+            <name>Application_Account</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Application_Account__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Application Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>DeploymentFrequency__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
-            <name>Repository</name>
-            <choiceReferences>AB</choiceReferences>
-            <choiceReferences>AC</choiceReferences>
-            <choiceReferences>AD</choiceReferences>
-            <choiceReferences>Other_1</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Repository</fieldText>
-            <fieldType>DropdownBox</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Other_3</name>
-            <dataType>String</dataType>
-            <fieldText>Other</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-            <visibilityRule>
-                <conditionLogic>1</conditionLogic>
-                <conditions>
-                    <leftValueReference>Repository</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <elementReference>Other_1</elementReference>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
+            <name>Repositoryy</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Repository</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>DeploymentFrequency__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Repository__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxValues</name>
+                <value>
+                    <numberValue>10.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <name>Image_Id</name>
@@ -275,7 +332,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Deployment_Form</targetReference>
+            <targetReference>Account_Records</targetReference>
         </connector>
     </start>
     <status>Draft</status>
