@@ -132,17 +132,6 @@
     <environments>Default</environments>
     <interviewLabel>Create Deployment Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Create Deployment Record</label>
-    <loops>
-        <name>LoopOverOpportunity</name>
-        <label>LoopOverOpportunity</label>
-        <locationX>176</locationX>
-        <locationY>398</locationY>
-        <collectionReference>OpportunityRecords</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <noMoreValuesConnector>
-            <targetReference>Deployment_Form</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -162,37 +151,11 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-    <recordLookups>
-        <name>Account_Records</name>
-        <label>Account Records</label>
-        <locationX>176</locationX>
-        <locationY>158</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>OpportunityRecords</targetReference>
-        </connector>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Account</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>OpportunityRecords</name>
-        <label>OpportunityRecords</label>
-        <locationX>176</locationX>
-        <locationY>278</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>LoopOverOpportunity</targetReference>
-        </connector>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>Opportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <screens>
         <name>Deployment_Form</name>
         <label>Deployment Form</label>
         <locationX>176</locationX>
-        <locationY>614</locationY>
+        <locationY>158</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -248,6 +211,12 @@
                 <name>maxValues</name>
                 <value>
                     <numberValue>10.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>Application_Account.recordId</elementReference>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -332,7 +301,7 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Account_Records</targetReference>
+            <targetReference>Deployment_Form</targetReference>
         </connector>
     </start>
     <status>Draft</status>
