@@ -1,6 +1,7 @@
 Insert Account:
-  sf_object: Account
+  sf_object: Account 
   fields:
+  - Image_Id__c
   - Name
   lookups:
     ParentId:
@@ -9,10 +10,21 @@ Insert Account:
 Insert Delivery__c:
   sf_object: Delivery__c
   fields:
+  - Field_1__c
   - Scheduled_Date__c
   - Status__c
   lookups:
     Supplier__c:
+      table: Account
+Insert Opportunity:
+  sf_object: Opportunity
+  fields:
+  - CloseDate
+  - IsPrivate
+  - Name
+  - StageName
+  lookups:
+    AccountId:
       table: Account
 Insert Delivery_Item__c:
   sf_object: Delivery_Item__c
@@ -22,3 +34,15 @@ Insert Delivery_Item__c:
   lookups:
     Delivery__c:
       table: Delivery__c
+Insert DeploymentFrequency__c:
+  sf_object: DeploymentFrequency__c
+  fields:
+  - Image_Id__c
+  - Notes__c
+  - Status__c
+  - Time_to_restore__c
+  lookups:
+    Application_Account__c:
+      table: Account
+    Repository__c:
+      table: Opportunity

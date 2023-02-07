@@ -1,0 +1,7 @@
+- object: Account
+  count: 10
+  fields:
+      Image_Id__c:
+          fake: Name 
+      Name:
+          fake: Name
