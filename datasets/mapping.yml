@@ -44,5 +44,3 @@ Insert DeploymentFrequency__c:
   lookups:
     Application_Account__c:
       table: Account
-    Repository__c:
-      table: Opportunity
