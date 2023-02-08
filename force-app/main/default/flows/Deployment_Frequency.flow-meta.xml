@@ -178,6 +178,57 @@
         <object>Opportunity</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Deployment_Record</name>
+        <label>Update Deployment Record</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Application_Account__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Application_Account__c</field>
+            <value>
+                <elementReference>get_dep_rec.Application_Account__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Image_Id__c</field>
+            <value>
+                <elementReference>get_dep_rec.Image_Id__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes__c</field>
+            <value>
+                <elementReference>get_dep_rec.Notes__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Related_Opportunities__c</field>
+            <value>
+                <elementReference>Related_Opportunity</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>get_dep_rec.Status__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Time_to_restore__c</field>
+            <value>
+                <elementReference>get_dep_rec.Time_to_restore__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>DeploymentFrequency__c</object>
+    </recordUpdates>
     <screens>
         <name>Deployment_Screen</name>
         <label>Deployment Screen</label>
@@ -263,12 +314,67 @@
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Update_Deployment_Record</targetReference>
+        </connector>
         <fields>
-            <name>Opp</name>
+            <name>App_Account</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>get_dep_rec.Application_Account__c</elementReference>
+            </defaultValue>
+            <fieldText>Application Account</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Image_Id</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>get_dep_rec.Image_Id__c</elementReference>
+            </defaultValue>
+            <fieldText>Image Id</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Statuss</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>get_dep_rec.Status__c</elementReference>
+            </defaultValue>
+            <fieldText>Status</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Related_Opportunity</name>
             <choiceReferences>choice_opp</choiceReferences>
             <dataType>String</dataType>
-            <fieldText>Opp</fieldText>
+            <defaultValue>
+                <elementReference>choice_opp</elementReference>
+            </defaultValue>
+            <fieldText>Related_Opportunities</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Time_to_restores</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>get_dep_rec.Time_to_restore__c</elementReference>
+            </defaultValue>
+            <fieldText>Time to restore</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Note</name>
+            <defaultValue>
+                <stringValue>{!get_dep_rec.Notes__c}</stringValue>
+            </defaultValue>
+            <fieldText>Notes</fieldText>
+            <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
