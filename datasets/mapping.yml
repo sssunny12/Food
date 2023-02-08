@@ -1,5 +1,5 @@
 Insert Account:
-  sf_object: Account 
+  sf_object: Account
   fields:
   - Image_Id__c
   - Name
@@ -39,8 +39,11 @@ Insert DeploymentFrequency__c:
   fields:
   - Image_Id__c
   - Notes__c
+  - Related_Opportunities__c
   - Status__c
   - Time_to_restore__c
   lookups:
     Application_Account__c:
       table: Account
+    Repository__c:
+      table: Opportunity
