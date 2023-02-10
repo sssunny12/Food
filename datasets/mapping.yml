@@ -16,24 +16,6 @@ Insert Delivery__c:
   lookups:
     Supplier__c:
       table: Account
-Insert Opportunity:
-  sf_object: Opportunity
-  fields:
-  - CloseDate
-  - IsPrivate
-  - Name
-  - StageName
-  lookups:
-    AccountId:
-      table: Account
-Insert Delivery_Item__c:
-  sf_object: Delivery_Item__c
-  fields:
-  - Food_Expiration__c
-  - Food_Storage__c
-  lookups:
-    Delivery__c:
-      table: Delivery__c
 Insert DeploymentFrequency__c:
   sf_object: DeploymentFrequency__c
   fields:
@@ -45,3 +27,11 @@ Insert DeploymentFrequency__c:
   lookups:
     Application_Account__c:
       table: Account
+Insert Delivery_Item__c:
+  sf_object: Delivery_Item__c
+  fields:
+  - Food_Expiration__c
+  - Food_Storage__c
+  lookups:
+    Delivery__c:
+      table: Delivery__c
