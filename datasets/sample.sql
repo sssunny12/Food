@@ -47,9 +47,9 @@ CREATE TABLE "DeploymentFrequency__c" (
 );
 INSERT INTO "DeploymentFrequency__c" VALUES(1,'BB','','B','Planned','','12');
 INSERT INTO "DeploymentFrequency__c" VALUES(2,'BB','','B','Planned','','12');
-INSERT INTO "DeploymentFrequency__c" VALUES(3,'BA','','A','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(4,'BA','','A','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(3,'BB','','C','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(4,'BB','','C','Planned','','13');
 INSERT INTO "DeploymentFrequency__c" VALUES(5,'BA','','A','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(6,'BA','','A','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(6,'BB','','C','Planned','','13');
 INSERT INTO "DeploymentFrequency__c" VALUES(7,'BA','','A','Planned','','13');
 COMMIT;
