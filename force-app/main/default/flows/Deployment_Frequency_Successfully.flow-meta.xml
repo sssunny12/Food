@@ -68,8 +68,8 @@
     <decisions>
         <name>Decision_update_create</name>
         <label>Decision update create</label>
-        <locationX>583</locationX>
-        <locationY>200</locationY>
+        <locationX>535</locationX>
+        <locationY>204</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>updatee</name>
@@ -135,8 +135,8 @@
     <recordCreates>
         <name>CreateDeployment</name>
         <label>CreateDeployment</label>
-        <locationX>732</locationX>
-        <locationY>117</locationY>
+        <locationX>675</locationX>
+        <locationY>120</locationY>
         <inputAssignments>
             <field>Application_Account__c</field>
             <value>
@@ -179,8 +179,8 @@
     <recordLookups>
         <name>All_Deployments</name>
         <label>All Deployments</label>
-        <locationX>462</locationX>
-        <locationY>192</locationY>
+        <locationX>406</locationX>
+        <locationY>186</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_update_create</targetReference>
@@ -200,8 +200,8 @@
     <recordLookups>
         <name>get_opp_rec</name>
         <label>get opp rec</label>
-        <locationX>161</locationX>
-        <locationY>196</locationY>
+        <locationX>87</locationX>
+        <locationY>224</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Opp_screen</targetReference>
@@ -221,8 +221,8 @@
     <recordUpdates>
         <name>updateDeployment</name>
         <label>updateDeployment</label>
-        <locationX>669</locationX>
-        <locationY>309</locationY>
+        <locationX>678</locationX>
+        <locationY>282</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Application_Account__c</field>
@@ -342,18 +342,18 @@
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
-        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Opp_screen</name>
         <label>Opp screen</label>
-        <locationX>326</locationX>
-        <locationY>194</locationY>
+        <locationX>263</locationX>
+        <locationY>186</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>All_Deployments</targetReference>
         </connector>
@@ -417,6 +417,7 @@
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>

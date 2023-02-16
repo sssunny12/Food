@@ -20,6 +20,7 @@ INSERT INTO "Account" VALUES(11,'Ana Schwartz','Fernando Navarro DDS','');
 INSERT INTO "Account" VALUES(12,'Ana Schwartz','Dr. Deanna David','');
 INSERT INTO "Account" VALUES(13,'Ana Schwartz','Kerry Franco V','');
 INSERT INTO "Account" VALUES(14,'','Sample Account for Entitlements','');
+INSERT INTO "Account" VALUES(15,'','Sample Account for Entitlements','');
 CREATE TABLE "Delivery_Item__c" (
 	id INTEGER NOT NULL, 
 	"Food_Expiration__c" VARCHAR(255), 
@@ -45,15 +46,15 @@ CREATE TABLE "DeploymentFrequency__c" (
 	"Application_Account__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "DeploymentFrequency__c" VALUES(1,'BB','','B','Planned','','12');
-INSERT INTO "DeploymentFrequency__c" VALUES(2,'BB','','B','Planned','','12');
-INSERT INTO "DeploymentFrequency__c" VALUES(3,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(4,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(5,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(6,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(7,'BA','','D','Planned','','11');
-INSERT INTO "DeploymentFrequency__c" VALUES(8,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(9,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(10,'BB','','C','Planned','','13');
-INSERT INTO "DeploymentFrequency__c" VALUES(11,'BA','','','Planned','','10');
+INSERT INTO "DeploymentFrequency__c" VALUES(1,'BA','','','Planned','','10');
+INSERT INTO "DeploymentFrequency__c" VALUES(2,'BA','','D','Planned','','11');
+INSERT INTO "DeploymentFrequency__c" VALUES(3,'BB','','B','Planned','','12');
+INSERT INTO "DeploymentFrequency__c" VALUES(4,'BB','','B','Planned','','12');
+INSERT INTO "DeploymentFrequency__c" VALUES(5,'BB','','','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(6,'BB','','','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(7,'BB','','','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(8,'BB','','','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(9,'BB','','','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(10,'BB','','','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(11,'BB','','','Planned','','13');
 COMMIT;
