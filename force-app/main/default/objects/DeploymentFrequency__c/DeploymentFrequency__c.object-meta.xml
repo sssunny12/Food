@@ -128,11 +128,14 @@
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <type>Default</type>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Deployment_Frequency_Record</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>View</actionName>
-        <formFactor>Large</formFactor>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -162,6 +165,8 @@
     </nameField>
     <pluralLabel>Deployment Frequencies</pluralLabel>
     <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <listViewButtons>New</listViewButtons>
         <searchResultsCustomButtons>New</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>

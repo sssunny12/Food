@@ -10,5 +10,5 @@
     <openType>sidebar</openType>
     <protected>false</protected>
     <requireRowSelection>true</requireRowSelection>
-    <url>/flow/Create_Deployment_Record</url>
+    <url>/flow/Deployment_Frequency_Successfully</url>
 </WebLink>
