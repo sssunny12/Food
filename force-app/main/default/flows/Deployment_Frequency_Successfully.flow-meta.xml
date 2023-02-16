@@ -66,80 +66,40 @@
         </value>
     </choices>
     <decisions>
-        <name>CreateUpdate</name>
-        <label>CreateUpdate</label>
-        <locationX>314</locationX>
-        <locationY>1070</locationY>
+        <name>Decision_update_create</name>
+        <label>Decision update create</label>
+        <locationX>583</locationX>
+        <locationY>200</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>update</name>
+            <name>updatee</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Application_Account.recordId</leftValueReference>
+                <leftValueReference>All_Deployments.Application_Account__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>LoopOverAllDeploymentRecords.Application_Account__c</elementReference>
+                    <elementReference>Application_Account.recordId</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_deployment_object_records</targetReference>
+                <targetReference>updateDeployment</targetReference>
             </connector>
-            <label>update</label>
+            <label>updatee</label>
         </rules>
         <rules>
-            <name>create</name>
+            <name>createe</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Application_Account.recordId</leftValueReference>
+                <leftValueReference>All_Deployments.Application_Account__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>LoopOverAllDeploymentRecords.Application_Account__c</elementReference>
+                    <elementReference>Application_Account.recordId</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Deployment_Object_Records</targetReference>
+                <targetReference>CreateDeployment</targetReference>
             </connector>
-            <label>create</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>update_create</name>
-        <label>update create</label>
-        <locationX>578</locationX>
-        <locationY>758</locationY>
-        <defaultConnector>
-            <targetReference>LoopOverAllDeploymentRecords</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>update_check</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Application_Account.recordId</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>LoopOverAllDeploymentRecords.Application_Account__r.Id</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>LoopOverAllDeploymentRecords</targetReference>
-            </connector>
-            <label>update check</label>
-        </rules>
-        <rules>
-            <name>create_check</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Application_Account.recordId</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>LoopOverAllDeploymentRecords.Application_Account__r.Id</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>LoopOverAllDeploymentRecords</targetReference>
-            </connector>
-            <label>create check</label>
+            <label>createe</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -151,22 +111,8 @@
         <valueField>Name</valueField>
     </dynamicChoiceSets>
     <environments>Default</environments>
-    <interviewLabel>Deployment Frequency {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Deployment Frequency</label>
-    <loops>
-        <name>LoopOverAllDeploymentRecords</name>
-        <label>LoopOverAllDeploymentRecords</label>
-        <locationX>314</locationX>
-        <locationY>638</locationY>
-        <collectionReference>All_Deployments</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>update_create</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>CreateUpdate</targetReference>
-        </noMoreValuesConnector>
-    </loops>
+    <interviewLabel>Deployment Frequency Successfully {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Deployment Frequency Successfully</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -176,7 +122,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -187,10 +133,10 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_Deployment_Object_Records</name>
-        <label>Create Deployment Object Records</label>
-        <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <name>CreateDeployment</name>
+        <label>CreateDeployment</label>
+        <locationX>732</locationX>
+        <locationY>117</locationY>
         <inputAssignments>
             <field>Application_Account__c</field>
             <value>
@@ -233,23 +179,29 @@
     <recordLookups>
         <name>All_Deployments</name>
         <label>All Deployments</label>
-        <locationX>314</locationX>
-        <locationY>518</locationY>
+        <locationX>462</locationX>
+        <locationY>192</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>LoopOverAllDeploymentRecords</targetReference>
+            <targetReference>Decision_update_create</targetReference>
         </connector>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Application_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Application_Account.recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>DeploymentFrequency__c</object>
-        <sortField>Name</sortField>
-        <sortOrder>Asc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
         <name>get_opp_rec</name>
         <label>get opp rec</label>
-        <locationX>314</locationX>
-        <locationY>278</locationY>
+        <locationX>161</locationX>
+        <locationY>196</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Opp_screen</targetReference>
@@ -267,10 +219,10 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_deployment_object_records</name>
-        <label>Update deployment object records</label>
-        <locationX>50</locationX>
-        <locationY>1190</locationY>
+        <name>updateDeployment</name>
+        <label>updateDeployment</label>
+        <locationX>669</locationX>
+        <locationY>309</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Application_Account__c</field>
@@ -279,6 +231,12 @@
                 <elementReference>Application_Account.recordId</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>Application_Account__c</field>
+            <value>
+                <elementReference>Application_Account.recordId</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Image_Id__c</field>
             <value>
@@ -314,8 +272,8 @@
     <screens>
         <name>Deployment_Screen</name>
         <label>Deployment Screen</label>
-        <locationX>314</locationX>
-        <locationY>158</locationY>
+        <locationX>161</locationX>
+        <locationY>73</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -391,8 +349,8 @@
     <screens>
         <name>Opp_screen</name>
         <label>Opp screen</label>
-        <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationX>326</locationX>
+        <locationY>194</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -463,13 +421,29 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>188</locationX>
-        <locationY>0</locationY>
+        <locationX>306</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Deployment_Screen</targetReference>
         </connector>
     </start>
     <status>Draft</status>
+    <variables>
+        <name>accessDeploymentObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>DeploymentFrequency__c</objectType>
+    </variables>
+    <variables>
+        <name>currentItem_cf</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>DeploymentFrequency__c</objectType>
+    </variables>
     <variables>
         <name>DeployRecordsafterloop</name>
         <dataType>SObject</dataType>
