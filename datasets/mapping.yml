@@ -1,7 +1,6 @@
 Insert Account:
   sf_object: Account
   fields:
-  - Image_Id__c
   - Name
   lookups:
     ParentId:
@@ -21,6 +20,7 @@ Insert DeploymentFrequency__c:
   fields:
   - Image_Id__c
   - Notes__c
+  - Related_Opp_Amount__c
   - Related_Opportunities__c
   - Status__c
   - Time_to_restore__c
@@ -35,3 +35,9 @@ Insert Delivery_Item__c:
   lookups:
     Delivery__c:
       table: Delivery__c
+Insert Opportunity:
+  sf_object: Opportunity
+  fields:
+  - Name
+  - AccountId
+  - Amount
