@@ -12,8 +12,8 @@
     <decisions>
         <name>Decision_update_create</name>
         <label>Decision update create</label>
-        <locationX>314</locationX>
-        <locationY>638</locationY>
+        <locationX>537</locationX>
+        <locationY>283</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>updatee</name>
@@ -82,7 +82,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -95,8 +95,8 @@
     <recordCreates>
         <name>CreateDeployment</name>
         <label>CreateDeployment</label>
-        <locationX>314</locationX>
-        <locationY>758</locationY>
+        <locationX>698</locationX>
+        <locationY>278</locationY>
         <connector>
             <targetReference>Copy_1_of_Record</targetReference>
         </connector>
@@ -142,8 +142,8 @@
     <recordLookups>
         <name>All_Deployments</name>
         <label>All Deployments</label>
-        <locationX>314</locationX>
-        <locationY>518</locationY>
+        <locationX>543</locationX>
+        <locationY>151</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Decision_update_create</targetReference>
@@ -163,8 +163,8 @@
     <recordLookups>
         <name>get_opp_rec</name>
         <label>get opp rec</label>
-        <locationX>314</locationX>
-        <locationY>278</locationY>
+        <locationX>337</locationX>
+        <locationY>151</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Opp_screen</targetReference>
@@ -184,8 +184,8 @@
     <recordUpdates>
         <name>updateDeployment</name>
         <label>updateDeployment</label>
-        <locationX>50</locationX>
-        <locationY>758</locationY>
+        <locationX>375</locationX>
+        <locationY>287</locationY>
         <connector>
             <targetReference>Record</targetReference>
         </connector>
@@ -238,8 +238,8 @@
     <screens>
         <name>Copy_1_of_Record</name>
         <label>Copy 1 of Record</label>
-        <locationX>314</locationX>
-        <locationY>878</locationY>
+        <locationX>699</locationX>
+        <locationY>425</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -308,8 +308,8 @@
     <screens>
         <name>Deployment_Screen</name>
         <label>Deployment Screen</label>
-        <locationX>314</locationX>
-        <locationY>158</locationY>
+        <locationX>218</locationX>
+        <locationY>151</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -381,8 +381,8 @@
     <screens>
         <name>Opp_screen</name>
         <label>Opp screen</label>
-        <locationX>314</locationX>
-        <locationY>398</locationY>
+        <locationX>444</locationX>
+        <locationY>151</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -449,6 +449,14 @@
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
         </fields>
+        <fields>
+            <name>Total_Related_Opp_Amount</name>
+            <dataType>Number</dataType>
+            <fieldText>Total Related Opp Amount</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
         <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
@@ -456,8 +464,8 @@
     <screens>
         <name>Record</name>
         <label>Record</label>
-        <locationX>50</locationX>
-        <locationY>878</locationY>
+        <locationX>377</locationX>
+        <locationY>420</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -524,11 +532,11 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>188</locationX>
-        <locationY>0</locationY>
+        <locationX>306</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Deployment_Screen</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>
