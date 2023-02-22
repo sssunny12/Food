@@ -1,26 +1,22 @@
 BEGIN TRANSACTION;
 CREATE TABLE "Account" (
 	id INTEGER NOT NULL, 
+	"Image_Id__c" VARCHAR(255), 
 	"Name" VARCHAR(255), 
+	"Sum_opp_amount__c" VARCHAR(255), 
 	"ParentId" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES(1,'Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES(2,'Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES(3,'Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES(4,'Faith Santos DDS','');
-INSERT INTO "Account" VALUES(5,'Mr. Elijah Herrera DVM','');
-INSERT INTO "Account" VALUES(6,'Ms. Debra Jacobson PhD','');
-INSERT INTO "Account" VALUES(7,'Tricia Melendez','');
-INSERT INTO "Account" VALUES(8,'Elizabeth Barajas DDS','');
-INSERT INTO "Account" VALUES(9,'Mrs. Rose Barnett DDS','');
-INSERT INTO "Account" VALUES(10,'Mr. Travis Taylor II','');
-INSERT INTO "Account" VALUES(11,'Fernando Navarro DDS','');
-INSERT INTO "Account" VALUES(12,'Dr. Deanna David','');
-INSERT INTO "Account" VALUES(13,'Kerry Franco V','');
-INSERT INTO "Account" VALUES(14,'Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES(15,'Sample Account for Entitlements','');
-INSERT INTO "Account" VALUES(16,'Sample Account for Entitlements','');
+INSERT INTO "Account" VALUES(1,'','Faith Santos DDS','','');
+INSERT INTO "Account" VALUES(2,'','Mr. Elijah Herrera DVM','','');
+INSERT INTO "Account" VALUES(3,'','Ms. Debra Jacobson PhD','','');
+INSERT INTO "Account" VALUES(4,'','Tricia Melendez','','');
+INSERT INTO "Account" VALUES(5,'','Elizabeth Barajas DDS','','');
+INSERT INTO "Account" VALUES(6,'','Mrs. Rose Barnett DDS','','');
+INSERT INTO "Account" VALUES(7,'','Mr. Travis Taylor II','','');
+INSERT INTO "Account" VALUES(8,'','Fernando Navarro DDS','','');
+INSERT INTO "Account" VALUES(9,'','Dr. Deanna David','','');
+INSERT INTO "Account" VALUES(10,'','Kerry Franco V','','');
 CREATE TABLE "Delivery_Item__c" (
 	id INTEGER NOT NULL, 
 	"Food_Expiration__c" VARCHAR(255), 
@@ -47,18 +43,22 @@ CREATE TABLE "DeploymentFrequency__c" (
 	"Application_Account__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "DeploymentFrequency__c" VALUES(1,'BA','','30000.0','A','Planned','','13');
+INSERT INTO "DeploymentFrequency__c" VALUES(1,'BC','','40000.0','B;A;C;G','Planned','','10');
 CREATE TABLE "Opportunity" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
 	"AccountId" VARCHAR(255), 
 	"Amount" VARCHAR(255), 
+	"CloseDate" VARCHAR(255), 
+	"StageName" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Opportunity" VALUES(1,'B','0016D00000vpBxIQAU','10000.0');
-INSERT INTO "Opportunity" VALUES(2,'F','0016D00000vpBxGQAU','10000.0');
-INSERT INTO "Opportunity" VALUES(3,'E','0016D00000vpBxHQAU','5000.0');
-INSERT INTO "Opportunity" VALUES(4,'A','0016D00000vpBxIQAU','10000.0');
-INSERT INTO "Opportunity" VALUES(5,'C','0016D00000vpBxIQAU','10000.0');
-INSERT INTO "Opportunity" VALUES(6,'D','0016D00000vpBxHQAU','10000.0');
+INSERT INTO "Opportunity" VALUES(1,'F','8','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(2,'E','9','5000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(3,'D','9','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(4,'B','10','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(5,'A','10','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(6,'C','10','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(7,'G','10','5000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(8,'H','10','5000.0','2023-02-24','Prospecting');
 COMMIT;

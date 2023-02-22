@@ -98,7 +98,7 @@
         <locationX>698</locationX>
         <locationY>278</locationY>
         <connector>
-            <targetReference>Copy_1_of_Record</targetReference>
+            <targetReference>Records</targetReference>
         </connector>
         <inputAssignments>
             <field>Application_Account__c</field>
@@ -121,7 +121,7 @@
         <inputAssignments>
             <field>Related_Opportunities__c</field>
             <value>
-                <elementReference>Related_Opportunity</elementReference>
+                <elementReference>Related_Opportunity1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -218,7 +218,7 @@
         <inputAssignments>
             <field>Related_Opportunities__c</field>
             <value>
-                <elementReference>Related_Opportunity</elementReference>
+                <elementReference>Related_Opportunity1</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -235,76 +235,6 @@
         </inputAssignments>
         <object>DeploymentFrequency__c</object>
     </recordUpdates>
-    <screens>
-        <name>Copy_1_of_Record</name>
-        <label>Copy 1 of Record</label>
-        <locationX>699</locationX>
-        <locationY>425</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <fields>
-            <name>Copy_1_of_Account_Applicationss</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Application_Account.recordName</elementReference>
-            </defaultValue>
-            <fieldText>Account Application</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Statusss</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Status</elementReference>
-            </defaultValue>
-            <fieldText>Status</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Image_Idss</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>ImageId</elementReference>
-            </defaultValue>
-            <fieldText>Image Id</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Related_Opportunityy</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Related_Opportunity</elementReference>
-            </defaultValue>
-            <fieldText>Related Opportunity</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Time_to_restoress</name>
-            <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Time_to_restore</elementReference>
-            </defaultValue>
-            <fieldText>Time to restore</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Notess</name>
-            <defaultValue>
-                <stringValue>{!Notes}</stringValue>
-            </defaultValue>
-            <fieldText>Notes</fieldText>
-            <fieldType>LargeTextArea</fieldType>
-            <isRequired>false</isRequired>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
     <screens>
         <name>Deployment_Screen</name>
         <label>Deployment Screen</label>
@@ -420,14 +350,11 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Related_Opportunity</name>
+            <name>Related_Opportunity1</name>
             <choiceReferences>choice_opp</choiceReferences>
             <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>choice_opp</elementReference>
-            </defaultValue>
-            <fieldText>Related_Opportunities</fieldText>
-            <fieldType>DropdownBox</fieldType>
+            <fieldText>Related Opportunity</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
             <isRequired>false</isRequired>
         </fields>
         <fields>
@@ -448,14 +375,6 @@
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
             <isRequired>false</isRequired>
-        </fields>
-        <fields>
-            <name>Total_Related_Opp_Amount</name>
-            <dataType>Number</dataType>
-            <fieldText>Total Related Opp Amount</fieldText>
-            <fieldType>InputField</fieldType>
-            <isRequired>false</isRequired>
-            <scale>0</scale>
         </fields>
         <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
@@ -500,13 +419,11 @@
             <isRequired>false</isRequired>
         </fields>
         <fields>
-            <name>Related_Opportunityy</name>
+            <name>Related_Opportunityy2</name>
+            <choiceReferences>choice_opp</choiceReferences>
             <dataType>String</dataType>
-            <defaultValue>
-                <elementReference>Related_Opportunity</elementReference>
-            </defaultValue>
             <fieldText>Related Opportunity</fieldText>
-            <fieldType>InputField</fieldType>
+            <fieldType>MultiSelectPicklist</fieldType>
             <isRequired>false</isRequired>
         </fields>
         <fields>
@@ -521,6 +438,70 @@
         </fields>
         <fields>
             <name>Notess</name>
+            <defaultValue>
+                <stringValue>{!Notes}</stringValue>
+            </defaultValue>
+            <fieldText>Notes</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Records</name>
+        <label>Record</label>
+        <locationX>680</locationX>
+        <locationY>414</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Application_Accounts</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Application_Account.recordName</elementReference>
+            </defaultValue>
+            <fieldText>Application Account</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Image_Idd</name>
+            <choiceReferences>ImageIdChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Image Id</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Statussss</name>
+            <choiceReferences>StatusChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Related_Opportunity3</name>
+            <choiceReferences>choice_opp</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Related Opportunity</fieldText>
+            <fieldType>MultiSelectPicklist</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Timetorestore</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Time_to_restore</elementReference>
+            </defaultValue>
+            <fieldText>Time to restore</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Nootes</name>
             <defaultValue>
                 <stringValue>{!Notes}</stringValue>
             </defaultValue>
