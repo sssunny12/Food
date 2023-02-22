@@ -6,7 +6,7 @@
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Picklist</type>
+    <type>MultiselectPicklist</type>
     <valueSet>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -17,4 +17,5 @@
             </value>
         </valueSetDefinition>
     </valueSet>
+    <visibleLines>10</visibleLines>
 </CustomField>
