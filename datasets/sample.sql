@@ -43,7 +43,7 @@ CREATE TABLE "DeploymentFrequency__c" (
 	"Application_Account__c" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "DeploymentFrequency__c" VALUES(1,'BC','','40000.0','B;A;C;G','Planned','','10');
+INSERT INTO "DeploymentFrequency__c" VALUES(1,'BB','','47000.0','BACGHIJ','Planned','','10');
 CREATE TABLE "Opportunity" (
 	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -53,12 +53,14 @@ CREATE TABLE "Opportunity" (
 	"StageName" VARCHAR(255), 
 	PRIMARY KEY (id)
 );
-INSERT INTO "Opportunity" VALUES(1,'F','8','10000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(2,'E','9','5000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(3,'D','9','10000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(4,'B','10','10000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(5,'A','10','10000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(6,'C','10','10000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(7,'G','10','5000.0','2023-02-25','Prospecting');
-INSERT INTO "Opportunity" VALUES(8,'H','10','5000.0','2023-02-24','Prospecting');
+INSERT INTO "Opportunity" VALUES(1,'J','10','2000.0','2023-02-24','Prospecting');
+INSERT INTO "Opportunity" VALUES(2,'F','8','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(3,'E','9','5000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(4,'D','9','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(5,'B','10','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(6,'A','10','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(7,'C','10','10000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(8,'I','10','5000.0','2023-02-26','Prospecting');
+INSERT INTO "Opportunity" VALUES(9,'G','10','5000.0','2023-02-25','Prospecting');
+INSERT INTO "Opportunity" VALUES(10,'H','10','5000.0','2023-02-24','Prospecting');
 COMMIT;
