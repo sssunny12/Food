@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Valid</fullName>
+    <active>true</active>
+    <errorConditionFormula>(LEN( Phone ) &gt; 10 &amp;&amp; LEN( Phone ) &gt;= 1)</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>not valid</errorMessage>
+</ValidationRule>
