@@ -11,10 +11,10 @@
             <name>Fire</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>DisableValidation</leftValueReference>
+                <leftValueReference>DisableFlow</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -25,9 +25,9 @@
     </decisions>
     <environments>Default</environments>
     <formulas>
-        <name>DisableValidation</name>
+        <name>DisableFlow</name>
         <dataType>Boolean</dataType>
-        <expression>{!$Setup.Account__c.Disable_Validation__c}</expression>
+        <expression>{!$Setup.Flow_Kill_Switch__c.Kill_Flow__c}</expression>
     </formulas>
     <interviewLabel>Kill Switch Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Kill Switch Flow</label>
@@ -57,10 +57,10 @@
         <locationY>306</locationY>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>IsDeleted</field>
-            <operator>EqualTo</operator>
+            <field>Phone</field>
+            <operator>IsNull</operator>
             <value>
-                <booleanValue>true</booleanValue>
+                <booleanValue>false</booleanValue>
             </value>
         </filters>
         <inputAssignments>
