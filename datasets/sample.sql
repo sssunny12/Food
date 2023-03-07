@@ -17,6 +17,17 @@ INSERT INTO "Account" VALUES(7,'','Mr. Travis Taylor II','','');
 INSERT INTO "Account" VALUES(8,'','Fernando Navarro DDS','','');
 INSERT INTO "Account" VALUES(9,'','Dr. Deanna David','','');
 INSERT INTO "Account" VALUES(10,'','Kerry Franco V','','');
+INSERT INTO "Account" VALUES(11,'','Sample Account for Entitlements','','');
+CREATE TABLE "Application__c" (
+	id INTEGER NOT NULL, 
+	"Amount__c" VARCHAR(255), 
+	"Date__c" VARCHAR(255), 
+	PRIMARY KEY (id)
+);
+INSERT INTO "Application__c" VALUES(1,'5000.0','2023-03-09');
+INSERT INTO "Application__c" VALUES(2,'15000.0','2023-02-23');
+INSERT INTO "Application__c" VALUES(3,'20000.0','2023-02-25');
+INSERT INTO "Application__c" VALUES(4,'10000.0','2023-03-08');
 CREATE TABLE "Delivery_Item__c" (
 	id INTEGER NOT NULL, 
 	"Food_Expiration__c" VARCHAR(255), 
