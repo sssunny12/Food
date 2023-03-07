@@ -8,6 +8,11 @@ Insert Account:
     ParentId:
       table: Account
       after: Insert Account
+Insert Application__c:
+  sf_object: Application__c
+  fields:
+  - Amount__c
+  - Date__c
 Insert Delivery__c:
   sf_object: Delivery__c
   fields:
@@ -16,17 +21,6 @@ Insert Delivery__c:
   - Status__c
   lookups:
     Supplier__c:
-      table: Account
-Insert Opportunity:
-  sf_object: Opportunity
-  fields:
-  - Name
-  - AccountId
-  - Amount
-  - CloseDate
-  - StageName
-  lookups:
-    AccountId:
       table: Account
 Insert DeploymentFrequency__c:
   sf_object: DeploymentFrequency__c
@@ -48,3 +42,14 @@ Insert Delivery_Item__c:
   lookups:
     Delivery__c:
       table: Delivery__c
+Insert Opportunity:
+  sf_object: Opportunity
+  fields:
+  - Name
+  - AccountId
+  - Amount
+  - CloseDate
+  - StageName
+  lookups:
+    AccountId:
+      table: Account
