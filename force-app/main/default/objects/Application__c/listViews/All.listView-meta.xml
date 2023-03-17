@@ -4,6 +4,8 @@
     <columns>NAME</columns>
     <columns>Amount__c</columns>
     <columns>Date__c</columns>
+    <columns>Mark__c</columns>
+    <columns>Marks__c</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

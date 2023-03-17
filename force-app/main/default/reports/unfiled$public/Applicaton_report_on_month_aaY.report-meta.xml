@@ -2,16 +2,15 @@
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <aggregateTypes>Average</aggregateTypes>
         <field>Application__c.Amount__c</field>
     </columns>
     <format>Summary</format>
     <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
+        <dateGranularity>Month</dateGranularity>
         <field>Application__c.Date__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>New Task Report on Applications Object</name>
+    <name>Applicaton report on month</name>
     <params>
         <name>co</name>
         <value>1</value>
@@ -22,7 +21,7 @@
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <dateColumn>Application__c.Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
