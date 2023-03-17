@@ -7,7 +7,7 @@ export default class DashboardButton extends NavigationMixin(LightningElement) {
         this[NavigationMixin.Navigate]({
           type: 'standard__webPage',
           attributes: {
-            url: '/lightning/r/Dashboard/01Z1y000000SCjCEAW/view?queryScope=userFolders'
+            url: '/lightning/r/Dashboard/01Z0w000000MeBIEA0/view?queryScope=userFolders'
           }
         });
       }

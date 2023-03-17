@@ -13,6 +13,7 @@ Insert Application__c:
   fields:
   - Amount__c
   - Date__c
+  - Marks__c
 Insert Delivery__c:
   sf_object: Delivery__c
   fields:
